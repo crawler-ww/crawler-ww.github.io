@@ -17,7 +17,7 @@
             if (prompt('请输入文章密码') !== '') {
                 alert('密码错误！');
                 if (history.length === 1) {
-                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                    location.replace("/"); // 这里替换成你的首页
                 } else {
                     history.back();
                 }
@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="个人博客 - WW">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="article:published_time" content="2020-03-31T12:27:50.344Z">
-<meta property="article:modified_time" content="2020-03-31T12:27:50.344Z">
+<meta property="article:modified_time" content="2020-04-02T11:51:39.120Z">
 <meta property="article:author" content="无畏者">
 <meta name="twitter:card" content="summary">
 
@@ -176,7 +176,7 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-
+  <a href="https://github.com/crawler-ww/crawler-ww.github.io" target="_blank" rel="noopener"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1" style="position:absolute; right:0"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -220,22 +220,32 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-match">
-          <a href="/match/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-diamond"></i> <br />
-            
-            比赛作品预览
           </a>
         </li>
       
@@ -530,14 +540,32 @@ var jiathis_config={
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
@@ -652,8 +680,13 @@ var jiathis_config={
 <span class="post-meta-divider">|</span>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共73字</span>
+  <span class="post-count">博客全站共346字</span>
 </div>
+<script>
+document.oncontextmenu=function(){/*阻止浏览器默认弹框*/
+  return false;
+};
+</script>
         
 
 

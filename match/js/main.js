@@ -1,13 +1,16 @@
 // JavaScript Document
-$(".search-input").mouseover(function(){
-	$(".search-form").addClass("focus");
-}).mouseout(function(){
-	$(".search-form").removeClass("focus");
-}).focusin(function(){
-	$(this).attr("placeholder", "");
-	$(".search-form").removeClass("focus");
-	$(".search-form").addClass("input");
-}).focusout(function(){
-	$(".search-form").removeClass("input");
-	$(this).attr("placeholder", "Search");
+$(".search-input").hover(function(){
+	$(".search-form").addClass("form-hover");
+}, function(){
+	$(".search-form").removeClass("form-hover");
+}).focusin(()=>{
+	$(".search-form").removeClass("form-hover");
+	$(".search-form").addClass("input-enter");
+	$(".search-input").attr("placeholder", "");
+}).focusout(()=>{
+	$(".search-form").removeClass("input-enter");
+	$(".search-input").attr("placeholder", "Search");
+});
+$(window).resize(()=>{
+	$("#dropdown").collapse("hide");
 });

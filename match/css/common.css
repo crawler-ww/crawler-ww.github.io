@@ -1,16 +1,36 @@
 /* CSS Document */
+/*背景动画*/
+body{
+	animation: bg 30s infinite;
+	background-color:#84E4C2!important;
+	animation-delay: 4s;
+}
+@keyframes bg{
+	0%{
+		background-color:#84E4C2;
+	}
+	30%{
+		background-color: #b1ffaf;
+	}
+	70%{
+		background-color: cadetblue;
+	}
+	100%{
+		background-color: #84E4C2;
+	}
+}
 a, a:hover{
 	text-decoration: none!important;
 }
-html{
-	font-size: 16px!important;
-}
-figure{
-	margin: 10px;
-}
 .mycontainer{
 	max-width: 1200px;
-	margin: auto;
+	margin:0 auto;
+}
+.d-flex{
+	display: flex;
+}
+.w-100{
+	width: 100%;
 }
 .form-block{
 	max-width: 600px;
@@ -18,95 +38,83 @@ figure{
 	display: flex;
 	justify-content: center;
 }
-.d-flex{
-	display: flex;
-}
-/*视频背景*/
-#bg-video{
-	position: fixed;
-	left: 0;
-	top: 0;
-	min-width: 100%;
-	min-height: 100%;
-	z-index: -1;
-}
 .mb-20{
 	margin-bottom: 20px;
 }
-/*导航*/
 #header .logo-nav{
+	background: #fff;
 	height: 120px;
-	background-color: white;
+	padding: 0 4rem;
 	display: flex;
-	justify-content:space-between;
+	justify-content: space-between;
 	align-items: center;
 }
-#header .nav a{
-	font-size: 1.115rem;
+#header .navlist{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.navlist li a{
+	display: block;
+	font-size: 1.8rem;
 	padding: 10px 15px;
-	color: chocolate;
 	position: relative;
 }
-#header #dropdown-btn{
-	color: orangered;
-	font-size: 30px;
-}
-.anim-a:after{
+.navlist li a:after{
 	content: "";
-	width: 0;
-	height: 3px;
 	position: absolute;
 	bottom: 0;
 	left: 50%;
-	background-color:burlywood;
-	transition: all .3s;
+	width: 0;
+	height: 3px;
+	background-color: antiquewhite;
+	transition: all .4s;
 }
-.anim-a:hover:after{
+.navlist li a:hover:after{
 	width: 100%;
 	left: 0;
 }
-/*折叠菜单*/
-#dropdown-menu{
-	background-color: rgba(255,255,255,.7);
-}
-#dropdown-menu ul li a{
-	display: block;
-	font-size: 1.115rem;
-	color: chocolate;
-	padding:10px 15px;
-}
-/*搜索框*/
-.search{
-	background-color: rgba(255,255,255,.5);
-	padding: 5px 10px;
-}
-.search .search-input{
-	width: 100%;
-	border-radius: 30px;
-	padding: 10px 20px;
-	height:45px;
-	border:none;
-	outline: none;
-	text-align: center;
-	font-size: 1.115rem;
-	letter-spacing: 1px;
-	opacity:.7;
-	transition:all .3s;
+#header .search{
+	background-color: rgba(255, 255, 255, .5);
+	padding: 1rem 2rem;
 }
 .search-form{
 	width: 50%;
-	transition:all .5s;
+	transition: all .5s ease-in;
 }
-.focus{
-	width: 100%!important;
+.search-form .search-input{
+	height: 4rem;
+	outline: none;
+	border: none;
+	border-radius: 50px;
+	padding: 10px;
+	font-size: 2rem;
+	font-weight: 300;
+	text-align: center;
+	opacity: .7;
+	transition: all .4s;
 }
-.input{
-	width: 100%!important;
+.form-hover{
+	width: 100%;
 }
-.input .search-input{
-	opacity: 1!important;
+.input-enter{
+	width: 100%;
 }
-/*底部*/
+.input-enter input{
+	opacity: 1;
+	text-align: left!important ;
+}
+.menu-btn{
+	background-color: transparent;
+	border: 1px solid #B4B4B4;
+	border-radius: 3px;
+	outline: none;
+}
+.menu-btn i{
+	font-size: 4rem;
+	color: aqua;
+}
+/*脚部*/
 #footer{
 	height: 150px;
 	background-color: #fff8dc;
@@ -115,77 +123,65 @@ figure{
 	justify-content: center;
 	align-items: center;
 }
-.copyright{
-	font-size: 1.2rem;
+#footer .copyright{
+	font-size: 2rem;
 	letter-spacing: 2px;
-	font-weight: 400;
-	margin-bottom: 1.5rem;
+	margin-bottom: 3rem;
 	text-align: center;
 }
-#footer .footer-icon img{
+#footer .icon img{
 	max-width: 35px;
 	margin: 5px;
 }
 
 @media (min-width:768px) and (max-width:992px){
+	html{
+		font-size: 9px!important;
+	}
 	#header .logo-nav{
 		height: 100px;
 	}
 	#header .logo img{
 		max-width: 200px;
 	}
-	html{
-		font-size: 14px!important;
-	}
 	#footer{
-		height: 120px;
+		height: 130px;
 	}
-	#footer .footer-icon img{
+	#footer .icon img{
 		max-width: 30px;
-	}
-	.search .search-input{
-		height: 40px;
 	}
 }
 @media (min-width:480px) and (max-width:767px){
-	#header .logo-nav{
-		height: 90px;
-		padding: 0 20px;
+	html{
+		font-size: 7px!important;
 	}
 	#header .logo img{
-		max-width: 170px;
+		max-width: 160px;
 	}
-	html{
-		font-size: 13px!important;
+	#header .logo-nav{
+		height: 90px;
 	}
-	.search .search-input{
-		height: 38px;
+	#footer .icon img{
+		max-width: 25px;
 	}
 	#footer{
 		height: 110px;
 	}
-	#footer .footer-icon img{
-		max-width: 35px;
-	}
 }
 @media (max-width:479px){
-	#header .logo-nav{
-		height: 80px;
-		padding: 0 10px;
+	html{
+		font-size: 6px!important;
 	}
 	#header .logo img{
-		max-width: 150px;
+		max-width: 130px;
 	}
-	html{
-		font-size: 12px!important;
+	#header .logo-nav{
+		height: 80px;
 	}
-	.search .search-input{
-		height: 30px
+	#footer .icon img{
+		max-width: 25px;
 	}
 	#footer{
 		height: 100px;
-	}
-	#footer .footer-icon img{
-		max-width: 25px;
 	}
 }

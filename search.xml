@@ -24,6 +24,34 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>比赛文件改动说明</title>
+    <url>/2020/04/02/%E6%AF%94%E8%B5%9B%E6%96%87%E4%BB%B6%E6%94%B9%E5%8A%A8%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<h2 id="我对首页做了如下修改"><a href="#我对首页做了如下修改" class="headerlink" title="我对首页做了如下修改:"></a>我对首页做了如下修改:</h2><ol>
+<li>把整体宽度改成了1200px</li>
+<li>搜索框做了更换</li>
+<li>背景改成了动画背景</li>
+</ol>
+<h2 id="我为什么要做这些修改呢"><a href="#我为什么要做这些修改呢" class="headerlink" title="我为什么要做这些修改呢"></a>我为什么要做这些修改呢</h2><p>是觉得之前的不太美观。当然，现在也不能说很美观，我想过改成把整个网页铺满全屏的但是这毕竟是比赛，还是要做一个折中的，如果太大改动，要花很多时间去适应。</p>
+<h2 id="设计稿部分也要做出相应的调整"><a href="#设计稿部分也要做出相应的调整" class="headerlink" title="设计稿部分也要做出相应的调整"></a>设计稿部分也要做出相应的调整</h2><ol>
+<li>要把宽度改成1200px</li>
+<li>背景颜色可以使用 #84E4C2 （暂定）</li>
+<li>搜索框要改变，按照网页实际效果</li>
+<li>可能还有一些其他细小的改动，所以在家练习的时候以实际效果为准（有什么疑问可以跟我说，再协调）</li>
+</ol>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>我没有加倒计时部分，还是跟以前一样的，没有改动，照着以前的做就OK</li>
+</ol>
+<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><p>你可以用手机或者平板打开进行预览，这样可以更加真实的感受一下响应式   <font size=5><a href="/match" target="_blank">预览</a></font></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><font size=5><a href="/match/match.zip" target="_blank">下载</a></font></p>
+]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>比赛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>测试hexo-admin</title>
     <url>/2020/04/01/%E6%B5%8B%E8%AF%95hexo-admin-1/</url>
     <content><![CDATA[]]></content>
