@@ -29,31 +29,68 @@
       </tags>
   </entry>
   <entry>
-    <title>page</title>
-    <url>/2020/04/01/page/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>测试hexo-admin</title>
-    <url>/2020/04/01/%E6%B5%8B%E8%AF%95hexo-admin-1/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/03/31/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>对象相关概念</title>
+    <url>/2020/04/03/%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>其实就是一个函数，用来生成对象。所有的对象都是由构造函数创建的。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><ol>
+<li>实例就是对象，由构造函数生成。平时用的实际的东西都是实例</li>
+<li>有时候需要new关键字生成</li>
+<li>实例身上有一个constructor指向对应构造函数</li>
+<li>判断一个对象是否是某的对象的实例，用instanceof运算符<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2></li>
+<li>生成的实例具有构造函数身上的属性或方法<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">arr.push(<span class="number">4</span>); <span class="comment">//[1, 2, 3, 4]</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*new了一个数组的实例，然后用push方法向尾部追加一个元素</span></span><br><span class="line"><span class="comment">*请问push方法从哪来的？其实就是继承自构造函数Array的</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
+<li>一个对象身上有另一个对象身上的属性或方法，这种具有的方式也叫继承</li>
+<li>注意：不光实例可以继承构造函数，对象和对象也可以继承<h2 id="构造函数的属性与方法（私有属性与方法）"><a href="#构造函数的属性与方法（私有属性与方法）" class="headerlink" title="构造函数的属性与方法（私有属性与方法）"></a>构造函数的属性与方法（私有属性与方法）</h2></li>
+<li>构造函数的属性和方法，只能构造方法调用，实例不能调用。举个例子：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Array</span>.of(<span class="number">5</span>); <span class="comment">//[1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>().of(<span class="number">5</span>); <span class="comment">//(intermediate value).of is not a function</span></span><br></pre></td></tr></table></figure>
+<h2 id="实例的属性与方法（公有属性和方法）"><a href="#实例的属性与方法（公有属性和方法）" class="headerlink" title="实例的属性与方法（公有属性和方法）"></a>实例的属性与方法（公有属性和方法）</h2></li>
+<li>实例的属性和方法，只能实例调用，构造方法不能调用（但是可以通过原型prototype访问）。举个例子：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">arr.concat([<span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// [1, 2, 3, 4]</span></span><br><span class="line"><span class="built_in">Array</span>.concat([<span class="number">1</span>, <span class="number">2</span>]); <span class="comment">//Array.concat is not a function</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.concat([<span class="number">1</span>, <span class="number">2</span>]); <span class="comment">//[1, 2]</span></span><br></pre></td></tr></table></figure>
+<h2 id="prototype原型"><a href="#prototype原型" class="headerlink" title="prototype原型"></a>prototype原型</h2></li>
+<li>构造函数身上的一个属性（prototype），它的类型为对象，这个属性的指向就是原型，<strong><em>构造函数中，只有在prototype中的属性和方法才是公有的，才可以被实例访问。记住，下面会提到</em></strong><h2 id="proto-原型"><a href="#proto-原型" class="headerlink" title="__proto__  原型"></a>__proto__  原型</h2></li>
+<li>首先要注意，这个属性是浏览器自己部署的，到了ES6也没有被正式写入标准中，只是在附录中有提到，所以建议大家不要用它，后面又替代方案</li>
+<li>它也是指向原型对象，与prototype一样，但是是有区别的，区别在于prototype是函数身上的属性，__proto__是对象身上的属性</li>
+<li>proto前后个各两个下划线，这种写法表示内部属性<h2 id="详解prototype原型与-proto-原型"><a href="#详解prototype原型与-proto-原型" class="headerlink" title="详解prototype原型与__proto__原型"></a>详解prototype原型与__proto__原型</h2>下面的讲解可能会非常绕哦  </li>
+<li>为什么浏览器要在对象身上部署这个__proto__属性，是吃饱了撑的吗？当然不是，prototype原型属性只有构造函数能访问，实例只能访问ptototype中的属性和方法。那么浏览器为了让对象也能访问到原型，所以部署了这个属性。但是本质没有发生改变都是通过构造函数访问，只不过是曲线救国了。来看一段代码：<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="number">123</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str.__proto__ === <span class="built_in">String</span>.prototype); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><strong><em>从这段代码中可以看到str对象的__proto__属性和String函数的prototype属性指向的是同一个对象，这没什么好说的之前说过浏览器部署这个属性就是为了让对象能够访问到prototype原型，</em></strong> 其实本质是不变的，<code>console.log(str.constructor.prototype === String.prototype);</code> 得到的结果也会是true,其实<code>str.constructor</code>就等于<code>String</code>。下面我们来验证一件事：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(__proto__ === <span class="keyword">constructor</span>.prototype); //true</span><br></pre></td></tr></table></figure>
+<p><strong><em>也就是说浏览器把<code>constructor.prototype</code>换成了<code>__proto__</code>本质还是找到对象的构造函数，再通过构造函数访问prototype原型，</em></strong>，到这就知道prototype与<strong>proto</strong>的关联，区别了吧。并不是什么高大上的东西。你以为就完了？继续看下面</p>
+<h3 id="继承原型链"><a href="#继承原型链" class="headerlink" title="继承原型链"></a>继承原型链</h3><ul>
+<li>我们执行<code>console.dir(String.__proto__);</code><br><img src="https://ae01.alicdn.com/kf/H2e3e9b81a0fd4050987e603bb4fb47a5G.jpg" alt="&quot;结果&quot;"><br>咦，为什么String函数里面也有<strong>proto</strong>属性呢，不是说只有对象才有吗。其实函数也是一种对象，那么应该就有这样的一个表达式<code>String.__proto__ === 函数构造函数.prototype</code>, 那么函数的构造函数是谁呢？来看看<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.__proto__ === <span class="built_in">Function</span>.prototype);<span class="comment">//true</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>哦，原来函数的构造函数是Function函数,*</strong>,完了吗？NO NO NO  </li>
+<li>我们执行<code>console.dir(Function.__proto__);</code><br><img src="https://ae01.alicdn.com/kf/H62ccad9cef374a42b973d86a0cb32a2cd.jpg" alt=""><br>诶，怎么Function指向的原型中还有一个<strong>proto</strong>属性，这个属性又是谁的。我们仔细来看看__proto属性中的内容，这些方法和属性怎么那么像Object的呢，其实所有对象都是继承自Object的，前面也讲过，那么我们来验证一下<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.__proto__.__proto__ === <span class="built_in">Object</span>.prototype);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+至此，就完了。</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>ES6面向对象编程</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>对象的简介</title>
+    <url>/2020/04/03/%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h2 id="什么是对象？"><a href="#什么是对象？" class="headerlink" title="什么是对象？"></a>什么是对象？</h2><p>对象简单点来理解，就是一个包含了很多的属性和方法的集合。</p>
+<h2 id="全局对象（顶层对象）"><a href="#全局对象（顶层对象）" class="headerlink" title="全局对象（顶层对象）"></a>全局对象（顶层对象）</h2><ol>
+<li>它是js预定义的对象，作为js的全局函数和全局属性的占位符</li>
+<li>它是顶层对象，由宿主环境决定<br> 1.浏览器环境中为window       <ol start="2">
+<li>node中为Global</li>
+</ol>
+</li>
+<li>他们身上的属性或方法可以直接使用，不用指定所属对象，比如：String（），Number（）</li>
+<li><strong><em>注意</em></strong>：我们经常使用的window其实是一个实例，是Window的一个实例  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span> <span class="keyword">instanceof</span> Window <span class="comment">//true</span></span><br><span class="line"><span class="built_in">window</span>.constructor === Window <span class="comment">//true</span></span><br></pre></td></tr></table></figure></li>
+<li>Window对象有构造函数，但是不能被实例化<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Window()  </span><br><span class="line"><span class="comment">//Uncaught TypeError: Illegal constructor</span></span><br></pre></td></tr></table></figure>
+<h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2></li>
+<li>ECMAScript自己定义的对象,每一个对象都有自己的构造函数</li>
+<li>每个内置对象都是全局对象的一个属性，比如：Object是一个内置对象，但是也是全局对象的一个属性<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.Object === <span class="built_in">Object</span> <span class="comment">//true</span></span><br></pre></td></tr></table></figure></li>
+<li>内置对象都是平级的，如果不算顶层对象window，每个内置对象都是顶层对象<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>简单总结一下，对象就是包含了很多的属性和方法的集合。全局对象是最大的，内置对象是全局对象的属性。<br>补充一点，所有其他对象都继承自Object这个内置对象</li>
+</ol>
+]]></content>
+      <categories>
+        <category>ES6面向对象编程</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
   </entry>
 </search>
