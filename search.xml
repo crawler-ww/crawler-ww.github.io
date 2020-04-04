@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Class语法详解【上】</title>
+    <url>/2020/04/04/Class%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3%E3%80%90%E4%B8%8A%E3%80%91/</url>
+    <content><![CDATA[<h2 id="再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象"><a href="#再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象" class="headerlink" title="再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象"></a>再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象</h2><ol>
+<li>使用字面量的形式{}创建一个对象，但是这个方法好像跟面向对象沾不上什么关系</li>
+<li>使用构造函数，下面一段代码<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//ES5语法</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    Person.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> p = <span class="keyword">new</span> Person(<span class="string">"wang"</span>,<span class="number">18</span>);</span><br><span class="line">    p.showName();</span><br></pre></td></tr></table></figure>
+嗯？这个时候一些学一些传统的面向对象语言的同学就会开始嘲讽了，这是面向对象？<br>其实这是一种伪对象，可以把Person函数看成是其他的编程语言中的类和构造函数，这两个概念在ES6之前是混在一起的，这种方法也特别繁琐，添加属性和方法都不是特别方便，为了解决这个问题，在ES6中就引入了Class这个特性。<h2 id="Class初体验"><a href="#Class初体验" class="headerlink" title="Class初体验"></a>Class初体验</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//ES6语法</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">yellowPerson</span></span>&#123;</span><br><span class="line">        <span class="comment">//构造函数，里面存放的是实例公有属性</span></span><br><span class="line">        <span class="keyword">constructor</span>(name, age)&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">            <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">        showName()&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> yellow = <span class="keyword">new</span> yellowPerson(<span class="string">"wang"</span>, <span class="number">18</span>);</span><br><span class="line">    yellow.showName();</span><br></pre></td></tr></table></figure>
+这样的代码是不是就有点面向对象的味道了？但是，值得注意的是Class不过是一个语法糖，换了层皮而已，本质上还是通过函数的方式创建了实例对象，我们来验证一下.<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> yellowPerson) <span class="comment">//function</span></span><br></pre></td></tr></table></figure>
+还是不愿意接受这个事实？我们可以再换一种验证方法，构造函数的构造方法都是存放在原型中的，可以直接和yellowPerson对比一下。<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(yellowPerson.prototype.constructor === yellowPerson); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+这就足以证明本质是不变的，Class只是对函数实例化对象进行了封装而已。我们要求也不要太高，本身js就是一种特殊的编程语言。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>ES6面向对象编程</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>对象相关概念</title>
     <url>/2020/04/03/%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</url>
     <content><![CDATA[<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>其实就是一个函数，用来生成对象。所有的对象都是由构造函数创建的。</p>

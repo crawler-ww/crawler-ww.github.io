@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ES6," />
 
 
 
@@ -94,13 +94,16 @@
 
 
 
-<meta name="description" content="相信终将发生改变，致敬未来！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="个人博客 - WW">
-<meta property="og:url" content="http://yoursite.com/categories/ES6%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/index.html">
+<meta name="description" content="再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象 使用字面量的形式{}创建一个对象，但是这个方法好像跟面向对象沾不上什么关系 使用构造函数，下面一段代码12345678910&#x2F;&#x2F;ES5语法    function Person(name, age)&amp;#123;        this.name &#x3D; name;        this.age &#x3D; age;    &amp;#125;    Per">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Class语法详解【上】">
+<meta property="og:url" content="http://yoursite.com/2020/04/04/Class%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3%E3%80%90%E4%B8%8A%E3%80%91/index.html">
 <meta property="og:site_name" content="个人博客 - WW">
-<meta property="og:description" content="相信终将发生改变，致敬未来！">
+<meta property="og:description" content="再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象 使用字面量的形式{}创建一个对象，但是这个方法好像跟面向对象沾不上什么关系 使用构造函数，下面一段代码12345678910&#x2F;&#x2F;ES5语法    function Person(name, age)&amp;#123;        this.name &#x3D; name;        this.age &#x3D; age;    &amp;#125;    Per">
+<meta property="article:published_time" content="2020-04-04T08:19:31.000Z">
+<meta property="article:modified_time" content="2020-04-04T08:42:58.056Z">
 <meta property="article:author" content="无畏者">
+<meta property="article:tag" content="ES6">
 <meta name="twitter:card" content="summary">
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/ES6面向对象编程/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/04/Class语法详解【上】/"/>
 
 
 
 
 
-  <title>分类: ES6面向对象编程 | 个人博客 - WW</title>
+  <title>Class语法详解【上】 | 个人博客 - WW</title>
   
 
 
@@ -172,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -299,111 +302,210 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>ES6面向对象编程<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/04/Class%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3%E3%80%90%E4%B8%8A%E3%80%91/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="无畏者">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ae01.alicdn.com/kf/H99c6571c1e2348d29aae1ae5f88e7523s.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客 - WW">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/04/04/Class%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3%E3%80%90%E4%B8%8A%E3%80%91/" itemprop="url">
-              
-                <span itemprop="name">Class语法详解【上】</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Class语法详解【上】</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-04-04T16:19:31+08:00"
-              content="2020-04-04" >
-          04-04
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-04T16:19:31+08:00">
+                2020-04-04
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES6%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6面向对象编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/04/03/%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/" itemprop="url">
-              
-                <span itemprop="name">对象相关概念</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-04-03T10:33:50+08:00"
-              content="2020-04-03" >
-          04-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/04/03/%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E4%BB%8B/" itemprop="url">
-              
-                <span itemprop="name">对象的简介</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-04-03T09:59:07+08:00"
-              content="2020-04-03" >
-          04-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象"><a href="#再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象" class="headerlink" title="再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象"></a>再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象</h2><ol>
+<li>使用字面量的形式{}创建一个对象，但是这个方法好像跟面向对象沾不上什么关系</li>
+<li>使用构造函数，下面一段代码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5语法</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    Person.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> p = <span class="keyword">new</span> Person(<span class="string">"wang"</span>,<span class="number">18</span>);</span><br><span class="line">    p.showName();</span><br></pre></td></tr></table></figure>
+嗯？这个时候一些学一些传统的面向对象语言的同学就会开始嘲讽了，这是面向对象？<br>其实这是一种伪对象，可以把Person函数看成是其他的编程语言中的类和构造函数，这两个概念在ES6之前是混在一起的，这种方法也特别繁琐，添加属性和方法都不是特别方便，为了解决这个问题，在ES6中就引入了Class这个特性。<h2 id="Class初体验"><a href="#Class初体验" class="headerlink" title="Class初体验"></a>Class初体验</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6语法</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">yellowPerson</span></span>&#123;</span><br><span class="line">        <span class="comment">//构造函数，里面存放的是实例公有属性</span></span><br><span class="line">        <span class="keyword">constructor</span>(name, age)&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">            <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">        showName()&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> yellow = <span class="keyword">new</span> yellowPerson(<span class="string">"wang"</span>, <span class="number">18</span>);</span><br><span class="line">    yellow.showName();</span><br></pre></td></tr></table></figure>
+这样的代码是不是就有点面向对象的味道了？但是，值得注意的是Class不过是一个语法糖，换了层皮而已，本质上还是通过函数的方式创建了实例对象，我们来验证一下.<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> yellowPerson) <span class="comment">//function</span></span><br></pre></td></tr></table></figure>
+还是不愿意接受这个事实？我们可以再换一种验证方法，构造函数的构造方法都是存放在原型中的，可以直接和yellowPerson对比一下。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(yellowPerson.prototype.constructor === yellowPerson); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+这就足以证明本质是不变的，Class只是对函数实例化对象进行了封装而已。我们要求也不要太高，本身js就是一种特殊的编程语言。</li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+    <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ES6/" rel="tag"><i class="fa fa-tag"></i> ES6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/03/%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/" rel="next" title="对象相关概念">
+                <i class="fa fa-chevron-left"></i> 对象相关概念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -411,6 +513,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80OTM5My8yNTg4NQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -431,8 +542,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -530,6 +650,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象"><span class="nav-number">1.</span> <span class="nav-text">再进入今天的主题之前，先来讲一讲再ES6之前如何自定义对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class初体验"><span class="nav-number">2.</span> <span class="nav-text">Class初体验</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -692,6 +828,10 @@ document.oncontextmenu=function(){/*阻止浏览器默认弹框*/
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -720,6 +860,17 @@ document.oncontextmenu=function(){/*阻止浏览器默认弹框*/
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
